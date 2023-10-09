@@ -1,0 +1,29 @@
+{
+  "name": "Grin",
+  "version": "1.0.0",
+  "description": "Strona z roku 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --source-map-root ./css --source-map true --include-path css/scss css/scss/style.scss css/style.css",
+    "index": "node-sass --source-map-root ./css --source-map true --include-path css/scss css/scss/index.scss css/index.css",
+    "header-sb": "node-sass --source-map-root ./css --source-map true --include-path css/scss css/scss/header-sb.scss css/header-sb.css",
+    "news": "node-sass --source-map-root ./css --source-map true --include-path css/scss css/scss/news.scss css/news.css",
+    "investor": "node-sass --source-map-root ./css --source-map true --include-path css/scss css/scss/investor.scss css/investor.css",
+    "scss-bootstrap": "node-sass --source-map-root ./css --source-map true --include-path css/scss css/scss/bootstrap.scss css/bootstrap.css",
+    "minify-css": "postcss css/style.css > css/style.min.css && postcss css/bootstrap.css > css/bootstrap.min.css",
+    "watch-scss": "nodemon -e scss -x \"npm run scss && npm run scss-bootstrap && npm run header-sb  && npm run news && npm run index && npm run investor \""
+  },
+  "author": "Dst Design",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^5.0.17",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.15",
+    "postcss-cli": "^9.1.0",
+    "purgecss": "^4.1.3"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
+}

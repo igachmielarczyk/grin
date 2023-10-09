@@ -1,0 +1,44 @@
+
+.se-pre-con{
+    background: darken($primary,25%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: 100px;
+        animation: zoomIn;
+        animation-duration: .5s;
+        animation-iteration-count: 10;
+    }
+}
+
+
+//1720px;
+@media only screen and (max-width: $x2){
+}
+
+//1400px;
+@media only screen and (max-width: $xxl){
+
+}
+//1200px;
+@media only screen and (max-width: $xl){
+}
+//992px;
+@media only screen and (max-width: $lg){
+
+}
+//768px;
+@media only screen and (max-width: $md){
+
+}
+//576px;
+@media only screen and (max-width: $sm){
+
+}

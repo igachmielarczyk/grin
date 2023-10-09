@@ -1,0 +1,377 @@
+.btn {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flex;
+    display: inline-flex;
+    border-radius: 50px;
+    font-size:  1.125rem;
+    font-weight: 600;
+    width: auto;
+    transition: all .2s linear;
+    &:focus {
+        box-shadow: none;
+    }
+    &.btn-primary {
+        color: $dark;
+        padding: 16px 33px;
+        text-transform: uppercase;
+        &:hover {
+    		background-color: transparent;
+    		border-color: transparent;
+    		box-shadow: inset 0 0 0 2em #fff;
+    	}
+        &.btn-border {
+            border: 1px solid transparent;
+            &:hover {
+                border: 1px solid $primary;
+            }
+        }
+    }
+
+    &.btn-secondary {
+        color: $dark;
+        padding: 16px 33px;
+        text-transform: uppercase;
+        &:hover {
+    		background-color: transparent;
+    		border-color: transparent;
+    		box-shadow: inset 0 0 0 2em #fff;
+    	}
+    }
+    &.btn-dark {
+        color: $white;
+        padding: 16px 50px;
+        text-transform: uppercase;
+        background-color: $dark;
+        svg {
+            width: 0;
+            height: 0;
+        }
+        &:hover {
+    		background-color: transparent;
+    		border-color: transparent;
+    		box-shadow: inset 0 0 0 2em #fff;
+            color: $dark;
+    	}
+    }
+    &.btn-send {
+        &:not(.show) {
+            i {
+                display: none;
+            }
+            svg {
+                display: inline-block;
+            }
+        }
+        &.show {
+            opacity: .5;
+            pointer-events: none;
+            i {
+                display: inline-block;
+            }
+            svg {
+                display: none;
+            }
+        }
+    }
+}
+
+.btn-arrow {
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s;
+    color: $white;
+    width: auto;
+    transition: all .2s linear;
+    z-index: 1;
+    svg {
+        height: 60px;
+        width: 100px;
+        display: block;
+        transition: .5s;
+        color: $primary;
+        .fashion-slider-svg-wrap {
+            transform: translateY(353px) rotateY(180deg);
+            transform-origin: 80px 0px 0px;
+        }
+        .fashion-slider-svg-circle-wrap {
+            transition: .5s;
+            stroke-width: 1px;
+            stroke: $primary;
+            fill: none;
+            stroke-dasharray: 0;
+            stroke-dashoffset: 0;
+            opacity: 1;
+            transform-origin: 0px 0px 0px;
+        }
+        .fashion-slider-svg-arrow {
+            transition: .5s;
+            fill: $primary;
+            transform: rotateY(180deg) translate(-55px,36.1px) scale(1.75);
+        }
+        .fashion-slider-svg-line {
+            transition: .5s;
+            stroke: $primary;
+            stroke-width: 2;
+            transform: translate(50px,42px);
+        }
+    }
+    &:hover{
+        color: $primary;
+        .fashion-slider-svg-circle-wrap {
+            stroke-dasharray: 25;
+            stroke-dashoffset: 80;
+            stroke-width: 2px
+        }
+        .fashion-slider-svg-arrow {
+            transform: rotateY(180deg) translate(-40px,36.1px) scale(1.75);
+        }
+        .fashion-slider-svg-line {
+            transform: translate(35px,42px) scaleX(.5);
+        }
+    }
+    &.arrow-secondary {
+        svg {
+            color: $secondary;
+            .fashion-slider-svg-circle-wrap {
+                stroke: $secondary;
+            }
+            .fashion-slider-svg-arrow {
+                fill:  $secondary;
+            }
+            .fashion-slider-svg-line {
+                stroke: $secondary;
+            }
+        }
+        &:hover {
+            color: $secondary;
+        }
+
+    }
+    &.arrow-info {
+        svg {
+            color: $info;
+            .fashion-slider-svg-circle-wrap {
+                stroke: $info;
+            }
+            .fashion-slider-svg-arrow {
+                fill:  $info;
+            }
+            .fashion-slider-svg-line {
+                stroke: $info;
+            }
+        }
+        &:hover {
+            color: $info;
+        }
+
+    }
+    &.dark {
+        color: $dark;
+    }
+}
+
+.wrapper-btn {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+.btn-arrow {
+	&.down {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&.collapsed {
+			.hide {
+				display: none;
+			}
+            .show {
+                display: block;
+            }
+			.a-up {
+				display: none;
+			}
+            .a-down {
+                display: block;
+            }
+
+		}
+		&:not(.collapsed) {
+			.hide {
+				display: block;
+			}
+            .show {
+                display: none;
+            }
+			.a-up {
+				display: block;
+			}
+            .a-down {
+                display: none;
+            }
+
+		}
+        // svg {
+        //     .fashion-slider-svg-line {
+        //         transform: rotate (90deg);
+        //     }
+        // }
+        .a-down {
+            height: 100px;
+            width: 70px;
+            display: flex;
+            justify-content: center;
+            .fashion-slider-svg-wrap {
+				transform: translate(-55px, 366px) rotateY(189deg) scale(1.5);
+			}
+			.fashion-slider-svg-arrow {
+				transform: rotate(90deg) translate(35px, -48.4px) scale(1.75);
+			}
+			.fashion-slider-svg-line {
+				transform: translate(42px, -39px) rotate(90deg);
+			}
+            &:hover {
+                .fashion-slider-svg-line {
+    				transform: translate(42px, 8px) rotate(90deg) scaleX(.5);
+    			}
+    			.fashion-slider-svg-arrow {
+    				transform: rotate(90deg) translate(45px, -48.4px) scale(1.75);
+    			}
+            }
+        }
+        .a-up {
+            height: 100px;
+            width: 70px;
+            display: flex;
+            justify-content: center;
+            .fashion-slider-svg-arrow {
+				transform: rotate(270deg) translate(-47px, 35.6px) scale(1.75);
+			}
+			.fashion-slider-svg-line {
+				transform: translate(42px, 45px) rotate(90deg);
+			}
+			.fashion-slider-svg-wrap {
+				transform: translate(-58px, 315px) rotateY(189deg) scale(1.5);
+			}
+            &:hover {
+                .fashion-slider-svg-line {
+    				transform: translate(42px, 36px) rotate(90deg) scaleX(.5);
+    			}
+    			.fashion-slider-svg-arrow {
+    				transform: rotate(270deg) translate(-40px, 35.6px) scale(1.75);
+    			}
+            }
+        }
+	}
+
+}
+
+.btn-downolad {
+	width: 42px;
+	height: 42px;
+	border: 1px solid $secondary;
+	border-radius: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .2s linear;
+	svg {
+		height: 20px;
+		width: 15px;
+		transition: all .2s linear;
+        position: absolute;
+        &.default {
+            color: $secondary;
+        }
+	}
+    .default {
+        opacity: 1;
+
+    }
+    .hover {
+        opacity: 0;
+    }
+	&:hover {
+		background-color: $secondary;
+		svg {
+			color: #fff;
+		}
+        .default {
+            opacity: 0;
+        }
+        .hover {
+            opacity: 1;
+        }
+	}
+    &.past {
+        background-color: $white;
+        &:hover {
+            .default {
+                opacity: 1;
+
+            }
+            .hover {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+/*RWD*/
+//1720
+@media only screen and (max-width: $x2){
+    .btn {
+    	font-size: 1rem;
+    	&.btn-primary {
+    		padding: 10px 24px;
+    	}
+    	&.btn-secondary {
+    		padding: 10px 24px;
+    	}
+    }
+}
+//1400
+@media only screen and (max-width: $xxl){
+    .btn-arrow {
+    	font-size: 1rem;
+    }
+}
+
+//1200px
+@media only screen and (max-width: $xl){
+
+}
+//992px
+@media only screen and (max-width: $lg){
+
+
+}
+//768px
+@media only screen and (max-width: $md){
+    .btn-arrow {
+    	svg {
+    		height: 42px;
+    	}
+        &.down {
+    		.a-down {
+    			height: 80px;
+    			width: 50px;
+    		}
+    		.a-up {
+    			height: 80px;
+    			width: 50px;
+    		}
+    	}
+    }
+}
+//576px
+@media only screen and (max-width: $sm){
+
+}

@@ -1,0 +1,346 @@
+@import "bootstrap_variables";
+@import "config";
+@import "partials/cookies";
+@import "partials/footer";
+@import "partials/loader";
+@import "partials/buttons";
+
+
+::-moz-selection {background: #58BC70;color: #383839}
+::selection {background: #58BC70;color: #383839}
+
+//BODY
+
+html.show-menu {
+	overflow: hidden !important;
+	height: 100vh !important;
+}
+
+body.show-menu {
+	overflow: hidden !important;
+	height: 100vh !important;
+}
+html {
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px; /*dodaję offset aby menu nie zasłoniło nam tekstu*/
+}
+
+.wow{
+    visibility: hidden;
+}
+body {
+	font-family: $font-family;
+	color: $dark;
+	position: relative;
+}
+svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.3s ease;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.fw-sb {
+	font-weight: 600;
+}
+
+//SECTIONS
+
+
+.triangle {
+	position: absolute;
+	bottom: -40px;
+	right: 0;
+	width: 138px;
+	height: 138px;
+	color: $dark;
+	z-index: 2;
+	.t-top {
+		clip-path: polygon(0 0, 0% 100%, 100% 0);
+		width: 100%;
+		height: 100%;
+		transition: all .2s linear;
+		svg {
+			color: $dark;
+			position: absolute;
+			top: 20px;
+			left: 15px;
+			height: 35px;
+			width: 22px;
+			transition: all .2s linear;
+			animation: arrowDown 2s infinite;
+		}
+	}
+	.t-bottom {
+		clip-path: polygon(0 100%, 100% 100%, 100% 0);
+		width: 50%;
+		height: 50%;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		transition: all .2s linear;
+	}
+	&.primary {
+		.t-top {
+			background-color: $primary;
+		}
+		.t-bottom {
+			background-color: $primary;
+		}
+		&:hover {
+			.t-bottom {
+				width: 100%;
+				height: 100%;
+			}
+			.t-top {
+				width: 80%;
+				height: 80%;
+				svg {
+					transform: scale(.7);
+				}
+			}
+		}
+	}
+	&.secondary {
+		.t-top {
+			background-color: $secondary;
+		}
+		.t-bottom {
+			background-color: $secondary;
+		}
+	}
+}
+@keyframes arrowDown {
+  0% {transform: translateY(0)}
+  50% {transform: translateY(40%)}
+  100% {transform: translateY(0)}
+}
+
+h3{
+	font-weight: 200;
+}
+
+h2 {
+	font-weight: 600;
+	margin-bottom: 5rem;
+}
+h4 {
+	font-weight: 500;
+	margin-bottom: 2rem;
+}
+
+.header-h1 {
+	font-size: 4.4375rem;
+	line-height: 1.1;
+}
+
+// form control
+
+.form-control {
+	width: 100% !important;
+	background-color: transparent;
+	border: 1px solid $black;
+	border-radius: 3px !important;
+	height: 47px;
+	border-radius: 5px !important;
+	width: 100%;
+	color: $black;
+	&:focus {
+		box-shadow: none;
+		background-color: $black;
+		color: #fff;
+		border: $black;
+	}
+}
+.input-group {
+	flex-direction: column;
+	margin-bottom: 2rem;
+}
+.form-label {
+	margin-bottom: 0.25rem;
+	font-size: .75rem;
+	font-weight: 500;
+}
+
+
+/*RWD*/
+//1680
+@media only screen and (max-width: $x2){
+	h1, .h1 {
+		font-size: 4rem;
+	}
+	h2, .h2 {
+		font-size: 2.8rem;
+	}
+	h3, .h3 {
+		font-size: 2.4rem;
+	}
+	h4, .h4 {
+		font-size: 1.4rem;
+	}
+
+	.header-h1 {
+		font-size: 3rem;
+	}
+	.triangle {
+		width: 100px;
+		height: 100px;
+		bottom: -25px;
+		.t-top {
+			svg {
+				height: 25px;
+				width: 11px;
+			}
+		}
+	}
+	h2 {
+		margin-bottom: 4rem;
+	}
+
+
+}
+//1440
+@media only screen and (max-width: $xxl){
+
+	h1, .h1 {
+		font-size: 3rem;
+		line-height: 1.1;
+	}
+	h2, .h2 {
+		font-size: 2.5rem;
+	}
+	h2 {
+		margin-bottom: 3rem;
+	}
+	h3, .h3 {
+		font-size: 2.5rem;
+	}
+	h4, .h4 {
+		font-size: 1.4rem;
+	}
+	h5, .h5 {
+		font-size: 1.2rem;
+	}
+	.header-h1 {
+		font-size: 3rem;
+	}
+}
+
+//1200px
+@media only screen and (max-width: $xl){
+
+	h1, .h1 {
+		font-size: 3rem;
+	}
+	h2, .h2 {
+		font-size: 2.2rem;
+	}
+	.header-h1 {
+		font-size: 2.7rem;
+	}
+}
+//992px
+@media only screen and (max-width: $lg){
+	.triangle {
+		width: 80px;
+		height: 80px;
+		.t-top {
+			svg {
+				top: 15px;
+				left: 11px;
+			}
+		}
+	}
+	h4, .h4 {
+		font-size: 1.3rem;
+	}
+
+
+	h3, .h3 {
+		font-size: 1.8rem;
+	}
+	h4 {
+		margin-bottom: 1.65rem;
+	}
+
+	.header-h1 {
+		font-size: 2.1rem;
+	}
+}
+//768px
+@media only screen and (max-width: $md){
+	h1, .h1 {
+		font-size: 2.5rem;
+	}
+
+	h2, .h2 {
+		font-size: 1.7rem;
+	}
+
+	h4 {
+		margin-bottom: 1.35rem;
+	}
+	.header-h1 {
+		font-size: 1.8rem;
+	}
+	.input-group {
+		margin-bottom: 1rem;
+	}
+}
+//576px
+@media only screen and (max-width: $sm){
+
+	h1, .h1 {
+		font-size: 1.8rem;
+	}
+	h2, .h2 {
+		font-size: 1.4rem;
+	}
+
+	h3, .h3 {
+		font-size: 1.5rem;
+	}
+	h2 {
+		margin-bottom: 2rem;
+	}
+	h5, .h5 {
+		font-size: 1.1rem;
+	}
+	.triangle {
+		bottom: -16px;
+		width: 60px;
+		height: 60px;
+		.t-top {
+			svg {
+				top: 5px;
+				left: 6px;
+			}
+		}
+	}
+	h4, .h4 {
+		font-size: 1.5rem;
+	}
+	.header-h1 {
+		font-size: 1.6rem;
+	}
+
+	@keyframes arrowDown {
+	  0% {transform: translateY(0)}
+	  50% {transform: translateY(30%)}
+	  100% {transform: translateY(0)}
+	}
+}
